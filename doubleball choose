@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>insert a title</title>
+    <meta charset="utf-8">
+  </head>
+  <script>
+/*  双色球：
+      随机生成6个红球：
+      随机范围：1~33
+      红球不能重复
+
+      随机生成1个篮球：1~16
+*/
+    function doubleball(){
+      var reds=[];//保存生成的红球
+//    随机生成6个红球，reds.length<6
+      while(reds.length<6){
+//      随机生成一个1~33之间的整数
+        var n=parseInt(Math.random()*(33-1+1)+1);
+//      如果reds中不包含该数字(indexOf())
+        if(reds.indexOf(n)==-1){
+          reds.push(n);
+        }
+      }
+//    在1~16之间随机生成一个篮球blue
+      var blue=parseInt(Math.random()*(16-1+1)+1);
+
+      alert(reds+" | "+blue);
+    }
+    </script>
+  <body>
+    <button onclick="doubleball()">机选</button>
+  </body>
+</html>
